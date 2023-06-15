@@ -1,0 +1,106 @@
+body{
+    margin: 0;
+    padding: 0;
+    
+}
+.container2 {
+    background-color: white;
+        display: grid;
+        grid-template-areas: 'header header'
+                             'contentR photo';
+        grid-template-columns: 2.5fr 1fr;
+        grid-template-rows: 0.1fr 9fr;
+    
+}
+.resultHeader {
+    background-color: red;
+    grid-area: header;
+    display: grid;
+    color: white;
+    padding: 5%;
+    margin: 0;
+    gap: 10px;
+}
+
+.fullname {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.title {
+    font-size: 1.5rem;
+
+}
+.resultContent {
+    grid-area: contentR;
+    padding: 2%;
+    
+}
+
+h4 {
+    color: red;
+    border-bottom: 1px solid red;
+}
+
+
+
+.photoR img {
+    height: 20%;
+    width: 90%;
+    background-color: lightcyan;
+}
+.education{
+    display: grid;
+    grid-template-areas: 'year school'
+            '. degree';
+            padding: 2%;
+
+} 
+.year {
+    grid-area: year;
+    font-size: larger;
+    font-weight: 600;
+    color: black;
+}
+.school{
+    grid-area: school;
+    
+        font-size: large;
+        font-weight: 600;
+        color: black;
+}
+.degree{
+    grid-area: degree;
+    color: gray;
+    font-weight: 500;
+    font-size: 0.9
+}
+
+.experience {
+    display: grid;
+    grid-template-areas: 'duration position'
+        '. company';
+    padding: 2%;
+
+}
+
+.duration {
+    grid-area: duration;
+    font-size: larger;
+    font-weight: 600;
+    color: black;
+}
+
+.position {
+    grid-area: position;
+
+    font-size: large;
+    font-weight: 600;
+    color: black;
+}
+
+.company {
+    grid-area: company;
+    color: gray;
+    font-weight: 500;
+    font-size: 0.9
+}
