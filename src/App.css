@@ -10,13 +10,16 @@ body {
   width: 100vw;
   aspect-ratio: 16/9
 }
+
 .header {
   background-color: #222;
   border-bottom: 1px solid red;
   display: grid;
+  grid-template-columns: 1fr 1fr;
   text-align: center;
     font-size: 3.3rem;
     color: red;
+    
     
 }
 .headerName {
@@ -89,23 +92,46 @@ text-align: start;
           -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
       }
     }
-    /* @keyframes scale {
-      0% {
-        transform: scale(1);
-      }
+    .headerLogo {
+      display: grid;
+      justify-content: end;
+      margin-right: 5vw;
+    }
+ .headerLogo img {
+  height: 90px;
+  width: 90px;
+animation: rotate 7s infinite linear,glow 3s infinite alternate ;
+filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
+
   
-      50% {
-        transform: scale(1.02);
-      }
-  
-      100% {
-        transform: scale(1);
-      }
-    } */
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
+  }
+
+  100% {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.9));
+  }
+}
+
+
 .content {
   
   display: grid;
   grid-template-columns: 1fr 1fr;
+  height: 85vh;
 }
 .footer {
   background-color: #222;
@@ -113,6 +139,7 @@ text-align: start;
   text-align: center;
   font-size: 2.3rem;
   color: white;
+  animation: glowing 2s ease-in-out infinite
 }
 .inputSide {
   
@@ -122,9 +149,9 @@ text-align: start;
   background-color: #222;
   color: white;
   padding: 20px;
- 
+  height: 80vh;
   /* Adjust the value as needed */
-  overflow-y: auto;
+  overflow: auto;
 }
 
 .inputSide::-webkit-scrollbar {
@@ -163,7 +190,7 @@ input[type='file'] {
   border: none;
   padding: 5px;
   border-radius: 4px;
-  width: 300px;
+  width: 48%;
   font-size: 16px;
   margin-bottom: 10px;
   margin-left: 10px;

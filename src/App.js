@@ -4,6 +4,7 @@ import General from './components/General';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Results from './components/Results';
+import logo from './logo.webp';
 
 class App extends Component {
   constructor(props) {
@@ -12,12 +13,28 @@ class App extends Component {
       generalInfo: {},
       educationInfo: {},
       experienceInfo: {},
+      editMode: false,
+      
     };
+    
   }
+  
+ handleEdit = (initialValues, generalInfo, educationInfo, experienceInfo) => {
+  // Use the initial values and other data as needed
+  this.setState({
+    generalInfo,
+    educationInfo,
+    experienceInfo,
+  });
+  this.generalComponent.setValues(initialValues.generalInfo);
+  this.educationComponent.setValues(initialValues.educationInfo);
+  this.experienceComponent.setValues(initialValues.experienceInfo);
+  this.setState({ editMode: true });
+};
 
-  //  handleGeneralSubmit = (generalInfo) => {
-  //   this.setState({ generalInfo });
-  // };
+
+  
+  
 handleSubmit = (event) => {
   event.preventDefault();
 
@@ -27,7 +44,7 @@ handleSubmit = (event) => {
     fullName: formData.get('fullName'),
     photo: formData.get('photo'),
     title: formData.get('title'),
-    describtion: formData.get('describtion'),
+    description: formData.get('description'),
     email: formData.get('email'),
     phone: formData.get('phone'),
     address: formData.get('address'),
@@ -50,24 +67,31 @@ handleSubmit = (event) => {
     educationInfo,
     experienceInfo,
   });
+
+  this.generalComponent.resetState();
+  this.educationComponent.resetState();
+  this.experienceComponent.resetState();
 };
 
   
 
   render() {
-    const { generalInfo, educationInfo, experienceInfo } = this.state;
+    const { generalInfo, educationInfo, experienceInfo, editMode } = this.state;
 
     return (
       <div className="container">
         <div className="header">
           <div className='headerName'>CV-Maker</div>
+          <div className='headerLogo'>
+            <img src={logo} className="App-logo" alt="logo" />
+          </div>
         </div>
         <div className="content">
           <div className="inputSide">
            <form onSubmit={this.handleSubmit} >
-             <General  />
-            <Education  />
-            <Experience  />
+             <General  ref={(ref) => (this.generalComponent = ref)} />
+            <Education  ref={(ref) => (this.educationComponent = ref)}/>
+            <Experience  ref={(ref) => (this.experienceComponent = ref)}/>
 
               <button type="submit">Submit</button>
             </form>
@@ -77,6 +101,11 @@ handleSubmit = (event) => {
               generalInfo={generalInfo}
               educationInfo={educationInfo}
               experienceInfo={experienceInfo}
+              onEdit={this.handleEdit}
+              editMode={editMode}
+              
+              
+
             />
           </div>
         </div>

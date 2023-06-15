@@ -44,7 +44,7 @@ h4 {
 
 
 .photoR img {
-    height: 20%;
+    height: 30vh;
     width: 90%;
     background-color: lightcyan;
 }
@@ -103,4 +103,25 @@ h4 {
     color: gray;
     font-weight: 500;
     font-size: 0.9
+}
+.edit {
+    position: absolute;
+    bottom: 6%;
+    left: 51%;
+    height: 30px;
+    width: 80px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit:hover {
+    background-color: #555;
+}
+
+.edit:active {
+    background-color: #222;
 }

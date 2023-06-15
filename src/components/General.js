@@ -7,15 +7,39 @@ class General extends Component {
       fullName: '',
       photo: null,
       title: '',
-      describtion: '',
+      descrpiption: '',
       email: '',
       phone: '',
       address: '',
     };
   }
+ resetState = () => {
+    this.setState({
+      fullName: '',
+      photo: null,
+      title: '',
+      description: '',
+      email: '',
+      phone: '',
+      address: ''
+    });
+  };
+   setValues = (values) => {
+    this.setState(values);
+  };
 
+//  componentDidMount() {
+//     // Set the initial state based on the received props
+//     this.setState({ ...this.props.generalInfo });
+//   }
 
-
+//   componentDidUpdate(prevProps) {
+//     // Check if the props have changed
+//     if (prevProps.generalInfo !== this.props.generalInfo) {
+//       // Update the component's state with the new props
+//       this.setState({ ...this.props.generalInfo });
+//     }
+//   }
   handleInputChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
@@ -24,7 +48,7 @@ class General extends Component {
   };
 
   render() {
-    const { fullName, title, describtion, email, phone, address } = this.state;
+    const { fullName, title, description, email, phone, address } = this.state;
 
     return (
       <>
@@ -44,7 +68,7 @@ class General extends Component {
           <input
             type="file"
             name="photo"
-            onChange={this.handleInputChange}
+            onChange={this.handleFileChange}
           />
         </label>
          <br />
@@ -59,11 +83,11 @@ class General extends Component {
         </label>
         <br />
         <label>
-          Describtion:
+          Description:
           <input
             type="text"
-            name="describtion"
-            value={describtion}
+            name="description"
+            value={description}
             onChange={this.handleInputChange}
           />
         </label>

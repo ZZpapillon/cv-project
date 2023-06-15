@@ -9,6 +9,30 @@ class Education extends Component {
       graduationYear: '',
     };
   }
+resetState = () => {
+    this.setState({
+        institute: '',
+        degree: '',
+        graduationYear: ''
+      
+    });
+  };
+
+   setValues = (values) => {
+    this.setState(values);
+  };
+  // componentDidMount() {
+  //   // Set the initial state based on the received props
+  //   this.setState({ ...this.props.generalInfo });
+  // }
+
+  // componentDidUpdate(prevProps) {
+  //   // Check if the props have changed
+  //   if (prevProps.generalInfo !== this.props.educationInfo) {
+  //     // Update the component's state with the new props
+  //     this.setState({ ...this.props.educationInfo });
+  //   }
+  // }
 
 //   handleInputChange = (event) => {
 //     this.setState({ [event.target.name]: event.target.value }, () => {

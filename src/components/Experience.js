@@ -9,7 +9,31 @@ class Experience extends Component {
       duration: '',
     };
   }
+resetState = () => {
+    this.setState({
+     
+        company: '',
+        position: '',
+        duration: ''
+      
+    });
+  };
 
+   setValues = (values) => {
+    this.setState(values);
+  };
+  componentDidMount() {
+    // Set the initial state based on the received props
+    this.setState({ ...this.props.experienceInfo });
+  }
+
+  componentDidUpdate(prevProps) {
+    // Check if the props have changed
+    if (prevProps.generalInfo !== this.props.generalInfo) {
+      // Update the component's state with the new props
+      this.setState({ ...this.props.experiencelInfo });
+    }
+  }
   // handleInputChange = (event) => {
   //   this.setState({ [event.target.name]: event.target.value }, () => {
   //     const { company, position, duration } = this.state;
@@ -20,6 +44,7 @@ class Experience extends Component {
   handleInputChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
+
 
   render() {
     const { company, position, duration } = this.state;
