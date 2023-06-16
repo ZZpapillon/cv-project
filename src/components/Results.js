@@ -18,7 +18,7 @@ class Results extends Component {
       educationInfo: {
         institute: 'University of Example',
         degree: 'Bachelor of Science',
-        graduationYear: '2022'
+        graduationYear: '2014-2018'
       },
       experienceInfo: {
         company: 'ABC Company',
