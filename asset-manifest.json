@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/cv-project/static/css/main.59afd338.css",
+    "main.js": "/cv-project/static/js/main.c162d2a9.js",
+    "static/media/logo.webp": "/cv-project/static/media/logo.e541ade366520fbfe69f.webp",
+    "static/media/johndoe.webp": "/cv-project/static/media/johndoe.ecffd30b0b23caaea153.webp",
+    "index.html": "/cv-project/index.html",
+    "main.59afd338.css.map": "/cv-project/static/css/main.59afd338.css.map",
+    "main.c162d2a9.js.map": "/cv-project/static/js/main.c162d2a9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.59afd338.css",
+    "static/js/main.c162d2a9.js"
+  ]
+}
